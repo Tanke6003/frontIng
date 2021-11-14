@@ -11,11 +11,8 @@ export class EmpleadosPage implements OnInit {
   empleados: Array<any>;
 
   rows = [
-    { name: 'Austin', gender: 'Male', company: 'Swimlane' },
-    { name: 'Dany', gender: 'Male', company: 'KFC' },
-    { name: 'Molly', gender: 'Female', company: 'Burger King' }
   ];
-  columns = [{ prop: 'name' }, { name: 'Gender' }, { name: 'Company' }];
+  columns = [{ name: 'Id' }, { name: 'Nombres' }, { name: 'Apellidos' },{ name: 'Puesto' },{ name: 'status' },{ name: 'direccion' },{ name: 'telefono' },{ prop: 'fecha' }];
   constructor( private _EmpleadosService: EmpleadosService,public events: Events) { 
     this.getEmpleados();
     this.events.noteChange.subscribe(()=>{
@@ -29,6 +26,7 @@ export class EmpleadosPage implements OnInit {
   getEmpleados(){
     this._EmpleadosService.getEmpleados().subscribe((res)=>{
       this.empleados = res.employes;
+      this.rows = this.empleados;
       console.log(this.empleados)
     },(error) =>{
       console.log(error);
