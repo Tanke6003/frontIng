@@ -5,7 +5,7 @@ import { Config } from '../config';
 import { Observable } from "rxjs";
 
 @Injectable()
-export class EmpleadosService {
+export class AgregarEmpleadoService {
 
     apiEndpoint: string;
 

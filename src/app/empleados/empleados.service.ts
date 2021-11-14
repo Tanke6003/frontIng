@@ -5,7 +5,7 @@ import { Config } from '../config';
 import { Observable } from "rxjs";
 
 @Injectable()
-export class AgregarEmpleadoService {
+export class EmpleadosService {
 
     apiEndpoint: string;
 
@@ -15,5 +15,8 @@ export class AgregarEmpleadoService {
     // guardar(data): Observable<any> {
     //     return this._http.post(this.apiEndpoint +'agregar-empleado',data);
     // }
+    getEmpleados(): Observable<any> {
+        return this._http.get(this.apiEndpoint +'empleados');
+    }
 
 }
