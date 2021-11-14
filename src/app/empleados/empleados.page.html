@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>empleados</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button color="success"[routerLink]="['/agregar-empleado']" >Agregar empleado</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-searchbar></ion-searchbar>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ngx-datatable [rows]="rows" [columns]="columns" class="material"></ngx-datatable>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
