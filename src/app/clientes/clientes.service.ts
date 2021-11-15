@@ -5,18 +5,18 @@ import { Config } from '../config';
 import { Observable } from "rxjs";
 
 @Injectable()
-export class EmpleadosService {
+export class ClienteService {
 
     apiEndpoint: string;
 
     constructor(private _http: HttpClient, private config: Config) {
         this.apiEndpoint = this.config.API_MAIN;
     }
-    getEmpleados(): Observable<any> {
-        return this._http.get(this.apiEndpoint +'empleados');
+    getClientes(): Observable<any> {
+        return this._http.get(this.apiEndpoint +'clientes');
     }
-    getEmpleado(data): Observable<any> {
-        return this._http.post(this.apiEndpoint +'empleados',data);
+    getCliente(data): Observable<any> {
+        return this._http.post(this.apiEndpoint +'clientes',data);
     }
 
 }

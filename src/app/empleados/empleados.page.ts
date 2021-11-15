@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmpleadosService } from './empleados.service';
 import { Events }            from '../events';
+
 @Component({
   selector: 'app-empleados',
   templateUrl: './empleados.page.html',
@@ -9,10 +10,7 @@ import { Events }            from '../events';
 })
 export class EmpleadosPage implements OnInit {
   empleados: Array<any>;
-
-  rows = [
-  ];
-  columns = [{ name: 'Id' }, { name: 'Nombres' }, { name: 'Apellidos' },{ name: 'Puesto' },{ name: 'status' },{ name: 'direccion' },{ name: 'telefono' },{ prop: 'fecha' }];
+  busqueda : String;
   constructor( private _EmpleadosService: EmpleadosService,public events: Events) { 
     this.getEmpleados();
     this.events.noteChange.subscribe(()=>{
@@ -26,8 +24,21 @@ export class EmpleadosPage implements OnInit {
   getEmpleados(){
     this._EmpleadosService.getEmpleados().subscribe((res)=>{
       this.empleados = res.employes;
-      this.rows = this.empleados;
-      console.log(this.empleados)
+    },(error) =>{
+      console.log(error);
+    });
+  }
+  getEmpleado(e){
+    let data = { 
+      id : e
+    }
+
+    this._EmpleadosService.getEmpleado(data).subscribe((res)=>{
+      console.log(res)
+      this.empleados = res.employe;
+      e = res.employe;
+      if(!this.busqueda)
+        this.getEmpleados();
     },(error) =>{
       console.log(error);
     });

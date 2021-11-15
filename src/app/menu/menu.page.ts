@@ -20,6 +20,21 @@ export class MenuPage implements OnInit {
       url:'/menu/empleados',
       icon:'alert'
     },
+    {
+      titulo:'Productos',
+      url:'/menu/productos',
+      icon:'alert'
+    },
+    {
+      titulo:'Clientes',
+      url:'/menu/clientes',
+      icon:'alert'
+    },
+    {
+      titulo:'Ventas',
+      url:'/menu/ventas',
+      icon:'alert'
+    },
 
   ];
   selectedIndex: number;

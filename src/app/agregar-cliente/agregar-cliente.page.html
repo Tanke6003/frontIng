@@ -3,12 +3,12 @@
     <ion-buttons slot="start">
         <ion-back-button defaultHref="/menu/home"></ion-back-button>
     </ion-buttons>
-    <ion-title>Agregar Empleado</ion-title>
+    <ion-title>Agregar Cliente</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="AgregarEmpleadoFrom">
+  <form [formGroup]="AgregarClienteFrom">
     <ion-grid>
       <ion-row>
         <ion-col>
@@ -41,17 +41,9 @@
       <ion-row>
         <ion-col>
           <ion-item>
-            <ion-label position="stacked">Puesto</ion-label>
-            <ion-input formControlName="puesto"></ion-input>
+            <ion-label position="stacked">Correo</ion-label>
+            <ion-input formControlName="correo"></ion-input>
           </ion-item>
-        </ion-col>
-        <ion-col>
-          <mat-form-field>
-            <mat-label>Fecha de Nacimiento </mat-label>
-            <input matInput [matDatepicker]="picker" formControlName="fechaNacimiento" readonly >
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
         </ion-col>
       </ion-row>
   </ion-grid>

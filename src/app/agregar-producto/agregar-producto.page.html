@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu/home"></ion-back-button>
+  </ion-buttons>
+  <ion-title>Agregar Producto</ion-title>
+</ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form [formGroup]="AgregarProductoFrom">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="stacked">nombre</ion-label>
+          <ion-input formControlName="nombre"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label position="stacked">Precio de Venta</ion-label>
+          <ion-input formControlName="precioVenta"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="stacked">Descripcion</ion-label>
+          <ion-textarea formControlName="descripcion"></ion-textarea>
+        </ion-item>
+      </ion-col>  
+    </ion-row>
+</ion-grid>
+</form>  
+</ion-content>
+<ion-button expand="block" (click)="guardar() "color="success">
+  Guardar
+</ion-button>

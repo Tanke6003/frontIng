@@ -16,6 +16,18 @@ const routes: Routes = [
         path: 'empleados',
         loadChildren: () => import('../empleados/empleados.module').then( m => m.EmpleadosPageModule)
       },
+      {
+        path: 'productos',
+        loadChildren: () => import('../productos/productos.module').then( m => m.ProductosPageModule)
+      },
+      {
+        path: 'clientes',
+        loadChildren: () => import('../clientes/clientes.module').then( m => m.ClientesPageModule)
+      },
+      {
+        path: 'ventas',
+        loadChildren: () => import('../ventas/ventas.module').then( m => m.VentasPageModule)
+      },
     ]
   }
 ];
