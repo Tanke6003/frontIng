@@ -1,23 +1,23 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Empleados</ion-title>
+    <ion-title>Proveedores</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <ion-grid>
     <ion-row>
       <ion-col>
-        <ion-button color="success"[routerLink]="['/agregar-empleado']" >Agregar empleado</ion-button>
+        <ion-button color="success"[routerLink]="['/agregar-proveedor']" >Agregar proveedores</ion-button>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-searchbar (ngModelChange)="getEmpleado($event)"[(ngModel)]="busqueda"></ion-searchbar>
+        <ion-searchbar (ngModelChange)="getProveedor($event)"[(ngModel)]="busqueda"></ion-searchbar>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <ngx-datatable class="material" [rows]="empleados" [columnMode]="'force'" [headerHeight]="50"
+        <ngx-datatable class="material" [rows]="proveedores" [columnMode]="'force'" [headerHeight]="50"
                 [footerHeight]="50" rowHeight="auto" [limit]="10">
                 <ngx-datatable-column name="Id">
                   <ng-template let-row="row" ngx-datatable-cell-template>
@@ -26,28 +26,12 @@
                 </ngx-datatable-column>
                 <ngx-datatable-column name="Nombres">
                   <ng-template let-row="row" ngx-datatable-cell-template>
-                    <ion-label>{{row.nombres}}</ion-label>
+                    <ion-label>{{row.nombre}}</ion-label>
                   </ng-template>
                 </ngx-datatable-column>
-                <ngx-datatable-column name="Apellidos">
+                <ngx-datatable-column name="Empresa">
                   <ng-template let-row="row" ngx-datatable-cell-template>
-                    <ion-label>{{row.apellidos}}</ion-label>
-                  </ng-template>
-                </ngx-datatable-column>
-                <ngx-datatable-column name="Puesto">
-                  <ng-template let-row="row" ngx-datatable-cell-template>
-                    <ion-label>{{row.puesto}}</ion-label>
-                  </ng-template>
-                </ngx-datatable-column>
-                <ngx-datatable-column name="Estatus">
-                  <ng-template let-row="row" ngx-datatable-cell-template>
-                    <ion-label *ngIf = "row.status == 1" color="success">Activo</ion-label>
-                    <ion-label *ngIf = "row.status == 0" color = "danger">Inactivo</ion-label>
-                  </ng-template>
-                </ngx-datatable-column>
-                <ngx-datatable-column name="Direccion">
-                  <ng-template let-row="row" ngx-datatable-cell-template>
-                    <ion-label>{{row.direccion}}</ion-label>
+                    <ion-label>{{row.nombreEmpresa}}</ion-label>
                   </ng-template>
                 </ngx-datatable-column>
                 <ngx-datatable-column name="Telefono">
@@ -55,9 +39,9 @@
                     <ion-label>{{row.telefono}}</ion-label>
                   </ng-template>
                 </ngx-datatable-column>
-                <ngx-datatable-column name="Fecha  de Nacimiento">
+                <ngx-datatable-column name="Correo">
                   <ng-template let-row="row" ngx-datatable-cell-template>
-                    <ion-label>{{row.fechaNacimiento | date:'shortDate'}}</ion-label>
+                    <ion-label>{{row.correo}}</ion-label>
                   </ng-template>
                 </ngx-datatable-column>
                 <ngx-datatable-column name="Detalles">

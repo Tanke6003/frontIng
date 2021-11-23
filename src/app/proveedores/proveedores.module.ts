@@ -2,17 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { VentasPageRoutingModule } from './ventas-routing.module';
-import { VentasPage } from './ventas.page';
+import { ProveedoresPageRoutingModule } from './proveedores-routing.module';
+import { ProveedoresPage } from './proveedores.page';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    VentasPageRoutingModule,
+    ProveedoresPageRoutingModule,
     NgxDatatableModule
   ],
-  declarations: [VentasPage]
+  declarations: [ProveedoresPage]
 })
-export class VentasPageModule {}
+export class ProveedoresPageModule {}

@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+
 import { IonicModule } from '@ionic/angular';
-import { AgregarClientePageRoutingModule } from './agregar-cliente-routing.module';
-import { AgregarClientePage } from './agregar-cliente.page';
+
+import { DetallesProveedorPageRoutingModule } from './detalles-proveedor-routing.module';
+
+import { DetallesProveedorPage } from './detalles-proveedor.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AgregarClientePageRoutingModule,
+    DetallesProveedorPageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [AgregarClientePage]
+  declarations: [DetallesProveedorPage]
 })
-export class AgregarClientePageModule {}
+export class DetallesProveedorPageModule {}

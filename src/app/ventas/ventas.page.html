@@ -1,9 +1,58 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>ventas</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Ventas</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button color="success"[routerLink]="['/nueva-venta']" >Nueva Venta</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-searchbar (ngModelChange)="getCliente($event)"[(ngModel)]="busqueda"></ion-searchbar>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ngx-datatable class="material" [rows]="clientes" [columnMode]="'force'" [headerHeight]="50"
+                [footerHeight]="50" rowHeight="auto" [limit]="10">
+                <ngx-datatable-column name="Id">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    <ion-label>{{row.id}}</ion-label>
+                  </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Nombre del Empleado">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    <ion-label>{{row.nombres}}</ion-label>
+                  </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Nombre del Cliente">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    <ion-label>{{row.apellidos}}</ion-label>
+                  </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Fecha">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    <ion-label>10-03-21</ion-label>
+                  </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Total">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    <ion-label>190.00$</ion-label>
+                  </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Detalles">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    <ion-button color="primary" [routerLink]="['/detalles-empleado/' + row.id]">
+                      <ion-icon name="chevron-forward-circle-outline" slot="icon-only"></ion-icon>
+                    </ion-button>
+                  </ng-template>
+                </ngx-datatable-column>
+              </ngx-datatable>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

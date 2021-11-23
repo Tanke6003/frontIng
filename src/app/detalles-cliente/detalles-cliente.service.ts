@@ -5,21 +5,19 @@ import { Config } from '../config';
 import { Observable } from "rxjs";
 
 @Injectable()
-export class DetallesEmpleadoService {
+export class DetallesClienteService {
 
     apiEndpoint: string;
 
     constructor(private _http: HttpClient, private config: Config) {
         this.apiEndpoint = this.config.API_MAIN;
     }
-    showDetallesEmpleado(data): Observable<any> {
-        return this._http.post(this.apiEndpoint + 'detalles-empleado',data);
+    showDetallesCliente(data): Observable<any> {
+        return this._http.post(this.apiEndpoint + 'detalles-cliente',data);
     }
     editar(data): Observable<any> {
-        return this._http.post(this.apiEndpoint +'editar-empleado',data);
+        return this._http.post(this.apiEndpoint +'editar-cliente',data);
     }
-    inactivo(data): Observable<any> {
-        return this._http.post(this.apiEndpoint +'inactivo-empleado',data);
-    }
+
 
 }

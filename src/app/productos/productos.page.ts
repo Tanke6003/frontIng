@@ -12,7 +12,7 @@ export class ProductosPage implements OnInit {
   busqueda : String;
   constructor( private _ProductosService: ProductosService,public events: Events) { 
     this.getProductos();
-    this.events.noteChange.subscribe(()=>{
+    this.events.productoChange.subscribe(()=>{
       this.getProductos();
     });  
   }

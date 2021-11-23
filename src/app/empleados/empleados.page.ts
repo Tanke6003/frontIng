@@ -11,10 +11,12 @@ import { Events }            from '../events';
 export class EmpleadosPage implements OnInit {
   empleados: Array<any>;
   busqueda : String;
+  refresh : boolean = false;
   constructor( private _EmpleadosService: EmpleadosService,public events: Events) { 
     this.getEmpleados();
-    this.events.noteChange.subscribe(()=>{
-      this.getEmpleados();
+    this.events.empleadoChange.subscribe(()=>{
+      this.refresh = true
+      
     });  
   }
 
@@ -43,5 +45,10 @@ export class EmpleadosPage implements OnInit {
       console.log(error);
     });
   }
-
+  ngAfterViewChecked(){
+    if(this.refresh){
+      this.getEmpleados();
+      this.refresh = false;
+    }
+  }
 }

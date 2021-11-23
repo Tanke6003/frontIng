@@ -1,0 +1,46 @@
+<ion-header >
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/menu/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agregar Proveedor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="AgregarProveedorFrom">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="stacked">nombres</ion-label>
+            <ion-input formControlName="nombre"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="stacked">Nombre de la Empresa</ion-label>
+            <ion-input formControlName="nombreEmpresa"></ion-input>
+          </ion-item>
+        </ion-col>  
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="stacked">telefono</ion-label>
+            <ion-input formControlName="telefono"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="stacked">Correo</ion-label>
+            <ion-input formControlName="correo"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+  </form>  
+</ion-content>
+  <ion-button expand="block" (click)="guardar() "color="success">
+    Guardar
+</ion-button>

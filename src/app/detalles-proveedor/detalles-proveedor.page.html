@@ -7,20 +7,17 @@
       <ion-button (click)="edit = true" > editar
         <ion-icon name="create-outline" slot="end"></ion-icon>
       </ion-button>
-      <ion-button color="danger"[disabled] = "edit"(click)="inactivoAlert()">inactivo
-        <ion-icon name="close-circle-outline" slot="end"></ion-icon>
-      </ion-button>
   </ion-buttons>
-    <ion-title>Agregar Empleado</ion-title>
+    <ion-title>Editar Proveedor</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   
-  <form [formGroup]="empleadoForm">
+  <form [formGroup]="proveedorForm">
     <ion-grid>
       <ion-row>
-        <ion-title>Id Empleado: {{empleado?.id}}</ion-title>
+        <ion-title>Id Proveedor: {{proveedor?.id}}</ion-title>
       </ion-row>
       <ion-row>
         <ion-col>
@@ -53,17 +50,9 @@
       <ion-row>
         <ion-col>
           <ion-item>
-            <ion-label position="stacked">Puesto</ion-label>
-            <ion-input formControlName="puesto"[disabled] = "!edit"></ion-input>
+            <ion-label position="stacked">Correo</ion-label>
+            <ion-input formControlName="correo"[disabled] = "!edit"></ion-input>
           </ion-item>
-        </ion-col>
-        <ion-col>
-          <mat-form-field>
-            <mat-label>Fecha de Nacimiento </mat-label>
-            <input matInput [matDatepicker]="picker" formControlName="fechaNacimiento" readonly [disabled] = "!edit">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
         </ion-col>
       </ion-row>
   </ion-grid>

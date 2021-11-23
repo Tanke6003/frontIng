@@ -12,7 +12,7 @@ export class ClientesPage implements OnInit {
   busqueda : String;
   constructor( private _ClienteService: ClienteService, public events: Events) {
     this.getClientes();
-    this.events.noteChange.subscribe(()=>{
+    this.events.clienteChange.subscribe(()=>{
       this.getClientes();
     }); 
    }

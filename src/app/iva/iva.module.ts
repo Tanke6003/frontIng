@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CrearVentaPageRoutingModule } from './crear-venta-routing.module';
+import { IvaPageRoutingModule } from './iva-routing.module';
 
-import { CrearVentaPage } from './crear-venta.page';
+import { IvaPage } from './iva.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CrearVentaPageRoutingModule
+    IvaPageRoutingModule
   ],
-  declarations: [CrearVentaPage]
+  declarations: [IvaPage]
 })
-export class CrearVentaPageModule {}
+export class IvaPageModule {}

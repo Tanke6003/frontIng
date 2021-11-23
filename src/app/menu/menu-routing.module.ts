@@ -28,6 +28,18 @@ const routes: Routes = [
         path: 'ventas',
         loadChildren: () => import('../ventas/ventas.module').then( m => m.VentasPageModule)
       },
+      {
+        path: 'proveedores',
+        loadChildren: () => import('../proveedores/proveedores.module').then( m => m.ProveedoresPageModule)
+      },
+      {
+        path: 'pedidos',
+        loadChildren: () => import('../pedidos/pedidos.module').then( m => m.PedidosPageModule)
+      },
+      {
+        path: 'iva',
+        loadChildren: () => import('../iva/iva.module').then( m => m.IvaPageModule)
+      },
     ]
   }
 ];

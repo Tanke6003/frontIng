@@ -21,18 +21,33 @@ export class MenuPage implements OnInit {
       icon:'alert'
     },
     {
-      titulo:'Productos',
-      url:'/menu/productos',
-      icon:'alert'
-    },
-    {
       titulo:'Clientes',
       url:'/menu/clientes',
       icon:'alert'
     },
     {
+      titulo:'Proveedores',
+      url:'/menu/proveedores',
+      icon:'alert'
+    },
+    {
       titulo:'Ventas',
       url:'/menu/ventas',
+      icon:'alert'
+    },
+    {
+      titulo:'Pedidos',
+      url:'/menu/pedidos',
+      icon:'alert'
+    },
+    {
+      titulo:'Productos',
+      url:'/menu/productos',
+      icon:'alert'
+    },
+    {
+      titulo:'IVA',
+      url:'/menu/iva',
       icon:'alert'
     },
 
